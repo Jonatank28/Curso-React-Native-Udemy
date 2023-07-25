@@ -10,6 +10,8 @@ import {
 } from 'react-native'
 import { styles, buttonStyles } from './ButtonStyle'
 import { ButtonType } from './type'
+import { useFonts } from 'expo-font'
+import { fonts } from '../../fonts'
 
 type ButtonProps = TouchableOpacityProps & {
     title: string
@@ -29,6 +31,13 @@ const Button = ({
     onPress,
     ...props
 }: ButtonProps) => {
+    const [fontsLoaded] = useFonts({
+        'Inter-Regular': fonts.inter.regular,
+        'Inter-Semi-Bold': fonts.inter.semiBold,
+        'Inter-Bold': fonts.inter.bold,
+        'Inter-Extra-Bold': fonts.inter.ExtraBold,
+    })
+
     const containerStyle: StyleProp<ViewStyle> = {
         ...styles.container,
         ...buttonStyles[type].container,
@@ -42,6 +51,7 @@ const Button = ({
 
     const textStyle = {
         ...styles.text,
+        fontFamily: 'Inter-Semi-Bold',
         ...buttonStyles[type].text,
     }
 

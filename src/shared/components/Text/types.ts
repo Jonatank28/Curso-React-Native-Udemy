@@ -3,5 +3,4 @@ export enum TextType {
     SMALL = 'small',
     MEDIUM = 'medium',
     XL = 'xlarge',
-    // Adicione mais tipos conforme necessário
 }

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { ButtonType } from './type'
-import { theme } from '../../themes/theme'
+import { theme } from '../../themes'
 
 const buttonStyles = {
     [ButtonType.PRIMARY]: {
